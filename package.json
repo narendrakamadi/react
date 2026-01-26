@@ -1,0 +1,29 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "Learn react with Narendra Kamadi",
+  "homepage": "https://github.com/narendrakamadi/react#readme",
+  "bugs": {
+    "url": "https://github.com/narendrakamadi/react/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/narendrakamadi/react.git"
+  },
+  "license": "ISC",
+  "author": "Narendra Kamadi",
+  "type": "commonjs",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.3"
+  },
+  "dependencies": {
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-router-dom": "^7.13.0"
+  }
+}
