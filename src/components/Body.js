@@ -2,6 +2,7 @@ import RestaurantCard from "../components/RestaurantCard";
 import resData from "../utils/Data";
 import Search from "./Search";
 import { useState } from "react";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
     const [restaurants, setRestaurants] = useState(resData);
@@ -9,7 +10,7 @@ const Body = () => {
     const handleTopRatedClick = () => {
         const filtered = resData.filter(
             (restaurant) =>
-            restaurant.info?.rating?.aggregate_rating > 4
+                restaurant.info?.rating?.aggregate_rating > 4
         );
         setRestaurants(filtered);
     }
@@ -21,6 +22,11 @@ const Body = () => {
             (restaurant) => restaurant.info?.name?.toLowerCase().includes(value.toLowerCase())
         );
         setRestaurants(filtered);
+    }
+
+    const onlineStatus = useOnlineStatus();
+    if (onlineStatus === false) {
+        return (<h1 style={{margin: 265, textAlign: "center"}}>Looks like you're offline!! Please check your internet connection; </h1>)
     }
 
     return (
